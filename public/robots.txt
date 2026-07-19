@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Mail.Ru
+Disallow: /
+
+Sitemap: http://127.0.0.1:8000/sitemap.xml

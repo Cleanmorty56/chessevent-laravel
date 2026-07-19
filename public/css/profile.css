@@ -1,0 +1,687 @@
+/* profile.css - стили для страницы профиля */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profile-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #f5f0e8;
+    min-height: 100vh;
+}
+
+/* ========== ШАПКА ПРОФИЛЯ ========== */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(135deg, #fff 0%, #faf5eb 100%);
+    border-radius: 25px;
+    padding: 25px 35px;
+    margin-bottom: 30px;
+    border: 1px solid #e0d0b0;
+    box-shadow: 0 5px 20px rgba(139, 69, 19, 0.1);
+}
+
+.profile-avatar {
+    text-align: center;
+}
+
+.profile-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #8b4513;
+    background: white;
+    padding: 5px;
+    transition: transform 0.3s;
+}
+
+.profile-avatar img:hover {
+    transform: scale(1.05);
+}
+
+.avatar-name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #8b4513;
+    font-weight: bold;
+}
+
+.profile-info-header {
+    flex: 1;
+}
+
+.profile-info-header h1 {
+    font-size: 32px;
+    color: #8b4513;
+    margin-bottom: 5px;
+}
+
+.profile-fullname {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.profile-fullname i {
+    color: #8b4513;
+    margin-right: 5px;
+}
+
+.profile-badges {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.badge-elo {
+    background: #8b4513;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.badge-elo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(139, 69, 19, 0.3);
+}
+
+.badge-level {
+    background: #e8e0d0;
+    color: #8b4513;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.profile-actions-header {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: #8b4513;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-action:hover {
+    background: #6b3100;
+    transform: translateY(-2px);
+    color: white;
+    text-decoration: none;
+}
+
+/* ========== СЕТКА КАРТОЧЕК ========== */
+.profile-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-card,
+.stats-card,
+.elo-card,
+.games-card,
+.tournaments-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid #e0d0b0;
+    transition: all 0.3s;
+}
+
+.info-card:hover,
+.stats-card:hover,
+.elo-card:hover,
+.games-card:hover,
+.tournaments-card:hover {
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+}
+
+.info-card h3,
+.stats-card h3,
+.elo-card h3,
+.games-card h3,
+.tournaments-card h3 {
+    color: #8b4513;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #8b4513;
+    display: inline-block;
+}
+
+/* ========== ИНФОРМАЦИЯ ========== */
+.info-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #f0e0c0;
+    transition: background 0.2s;
+}
+
+.info-row:hover {
+    background: #faf5eb;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 8px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #8b4513;
+}
+
+.info-label i {
+    width: 20px;
+    color: #8b4513;
+    margin-right: 8px;
+}
+
+.info-value {
+    color: #555;
+}
+
+.not-specified {
+    color: #aaa;
+    font-style: italic;
+}
+
+.elo-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #8b4513;
+}
+
+/* ========== СТАТИСТИКА ========== */
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px 25px;
+    background: #faf5eb;
+    border-radius: 15px;
+    min-width: 100px;
+    transition: all 0.3s;
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.stat-wins .stat-number { color: #2e7d32; }
+.stat-losses .stat-number { color: #c62828; }
+.stat-draws .stat-number { color: #f57c00; }
+.stat-rate .stat-number { color: #1565c0; }
+
+/* ========== ИСТОРИЯ ELO ========== */
+.elo-timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.elo-point {
+    background: #faf5eb;
+    border-radius: 12px;
+    padding: 12px 18px;
+    text-align: center;
+    min-width: 100px;
+    transition: all 0.3s;
+}
+
+.elo-point:hover {
+    transform: translateY(-2px);
+    background: #e8e0d0;
+}
+
+.elo-date {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.elo-change {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.elo-change.up { color: #2e7d32; }
+.elo-change.down { color: #c62828; }
+
+.elo-values {
+    font-size: 12px;
+    color: #8b4513;
+    margin-top: 5px;
+}
+
+/* ========== ИСТОРИЯ ИГР ========== */
+.games-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+}
+
+.games-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+.games-table th {
+    background: #8b4513;
+    color: #f0e6d2;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.games-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0d0b0;
+}
+
+.games-table tr {
+    transition: background 0.2s;
+}
+
+.games-table tr:hover td {
+    background: #faf5eb;
+}
+
+.game-date {
+    font-size: 13px;
+    color: #666;
+}
+
+.game-opponent {
+    font-weight: bold;
+}
+
+.game-color {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.game-color.white {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.game-color.black {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.game-result {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.result-win {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.result-loss {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.result-draw {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.btn-pgn {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #8b4513;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-pgn:hover {
+    background: #6b3100;
+    transform: translateY(-1px);
+    color: white;
+    text-decoration: none;
+}
+
+/* ========== ПАГИНАЦИЯ ========== */
+.pagination-bar {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.page-link {
+    padding: 8px 14px;
+    background: white;
+    border: 2px solid #8b4513;
+    color: #8b4513;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.page-link:hover,
+.page-link.active {
+    background: #8b4513;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* ========== ТУРНИРЫ ========== */
+.tournaments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.tournament-item {
+    background: #faf5eb;
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.tournament-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+}
+
+.tournament-item h4 {
+    color: #8b4513;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-left: 3px solid #8b4513;
+    padding-left: 10px;
+}
+
+.tournament-desc {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.tournament-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-завершен { background: #e8f5e9; color: #2e7d32; }
+.status-впроцессе { background: #fff3e0; color: #f57c00; }
+.status-планируется { background: #e3f2fd; color: #1565c0; }
+
+.tournament-reg-date {
+    font-size: 12px;
+    color: #888;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-tournament {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    background: #8b4513;
+    color: white;
+    border-radius: 8px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-tournament:hover {
+    background: #6b3100;
+    transform: translateY(-2px);
+    color: white;
+    text-decoration: none;
+}
+
+/* ========== ПУСТЫЕ СООБЩЕНИЯ ========== */
+.empty-message {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-style: italic;
+    background: #faf5eb;
+    border-radius: 15px;
+}
+
+/* ========== АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ========== */
+@media (max-width: 768px) {
+    .profile-page {
+        padding: 15px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .profile-info-header h1 {
+        font-size: 24px;
+    }
+
+    .profile-fullname {
+        font-size: 14px;
+    }
+
+    .profile-badges {
+        justify-content: center;
+    }
+
+    .profile-actions-header {
+        justify-content: center;
+    }
+
+    .info-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .stats-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat-item {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .stat-number {
+        font-size: 24px;
+    }
+
+    .tournaments-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .pagination-bar {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .page-link {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .games-table th,
+    .games-table td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .btn-pgn {
+        padding: 2px 8px;
+        font-size: 10px;
+    }
+
+    .game-color,
+    .game-result {
+        padding: 2px 8px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-page {
+        padding: 10px;
+    }
+
+    .info-card,
+    .stats-card,
+    .elo-card,
+    .games-card,
+    .tournaments-card {
+        padding: 15px;
+    }
+
+    .info-card h3,
+    .stats-card h3,
+    .elo-card h3,
+    .games-card h3,
+    .tournaments-card h3 {
+        font-size: 16px;
+    }
+
+    .elo-timeline {
+        gap: 8px;
+    }
+
+    .elo-point {
+        padding: 8px 12px;
+        min-width: 80px;
+    }
+
+    .tournament-item {
+        padding: 15px;
+    }
+
+    .tournament-item h4 {
+        font-size: 16px;
+    }
+}
+
+/* ========== АНИМАЦИИ ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-card,
+.stats-card,
+.elo-card,
+.games-card,
+.tournaments-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ========== СКРОЛЛБАР ========== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5f0e8;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8b4513;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b3100;
+}

@@ -1,0 +1,172 @@
+.containereg {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: #f0d9b5;
+    border-radius: 10px;
+    border: 3px solid #8b4513;
+    box-shadow: 0 10px 25px rgba(139, 69, 19, 0.2);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.containereg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+            linear-gradient(45deg, #b58863 25%, transparent 25%),
+            linear-gradient(-45deg, #b58863 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #b58863 75%),
+            linear-gradient(-45deg, transparent 75%, #b58863 75%);
+    background-size: 50px 50px;
+    background-position: 0 0, 0 25px, 25px -25px, -25px 0px;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.containereg h2 {
+    color: #5a3921;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.pawn-form {
+    position: relative;
+    z-index: 1;
+}
+
+#pawn-container {
+    height: 60px;
+    margin: 1.5rem 0;
+}
+
+#pawn {
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Поля формы */
+.form-fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #8b4513;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: 'Georgia', serif;
+    color: #5a3921;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #6b3100;
+    box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.3);
+    background-color: white;
+}
+
+.control-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #5a3921;
+    font-weight: bold;
+}
+
+.btn-reg {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-reg:hover {
+    background-color: #6b3100;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-reg:active {
+    transform: translateY(-1px);
+}
+
+
+.btn-reg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    z-index: -1;
+}
+
+.btn-reg:hover::after {
+    transform: translateX(100%);
+}
+
+select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235a3921'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+}
+
+.help-block {
+    color: #d9534f;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .containereg {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .form-input {
+        padding: 0.7rem 0.9rem;
+    }
+
+    .btn-reg {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    #pawn {
+        font-size: 35px;
+    }
+}

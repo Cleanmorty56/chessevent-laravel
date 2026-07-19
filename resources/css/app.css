@@ -1,0 +1,589 @@
+main > .container {
+    padding: 70px 15px 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.footer {
+    background-color: #f5f5f5;
+    font-size: .9em;
+    height: 60px;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    content: '';
+    left: 3px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: solid 5px transparent;
+    margin: 4px 4px 2px 4px;
+    background: transparent;
+}
+
+a.asc:after {
+    border-bottom: solid 7px #212529;
+    border-top-width: 0;
+}
+
+a.desc:after {
+    border-top: solid 7px #212529;
+    border-bottom-width: 0;
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding-top: 7px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* ===== ИСПРАВЛЕННЫЙ НАВБАР — КОМПАКТНЫЙ ===== */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 50px !important;
+    padding-top: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+}
+
+.navbar-brand {
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 30px !important;
+    width: auto !important;
+}
+
+.navbar-nav {
+    flex-wrap: nowrap;
+}
+
+.navbar-nav .nav-link {
+    padding: 0.25rem 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    margin: 0 1px;
+    white-space: nowrap;
+    font-size: 0.85rem;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-nav .nav-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Соц сети и вход/выход в правом углу */
+.navbar .d-flex.justify-content-between {
+    width: 100%;
+    align-items: center;
+}
+
+.social-icons {
+    gap: 6px;
+    flex-shrink: 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.social-icon img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Кнопка выхода */
+.navbar-nav .logout {
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+    text-align: right;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+
+/* Для планшетов */
+@media (max-width: 991.98px) {
+    .navbar .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-nav.mx-auto,
+    .navbar-nav:not(.mx-auto) {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        margin-bottom: 3px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin: 5px 0 0 0;
+        gap: 10px;
+    }
+
+    .navbar .d-flex.align-items-center.gap-2 {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .navbar .d-flex.align-items-center.gap-2 .navbar-nav {
+        width: 100%;
+    }
+}
+
+/* Для средних экранов */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .navbar-nav .nav-link {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .social-icons {
+        gap: 5px;
+    }
+}
+
+/* Для мобильных */
+@media (max-width: 767.98px) {
+    .navbar {
+        min-height: 45px !important;
+    }
+
+    .navbar-brand img {
+        height: 25px !important;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .social-icon img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Для больших экранов (от 1920px) */
+@media (min-width: 1920px) {
+    .navbar {
+        min-height: 60px !important;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.95rem;
+        margin: 0 3px;
+    }
+
+    .navbar-brand img {
+        height: 35px !important;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .logout {
+        font-size: 0.95rem !important;
+        padding: 0.4rem 0.8rem !important;
+    }
+}
+
+/* Для очень больших экранов (от 2560px) */
+@media (min-width: 2560px) {
+    .navbar {
+        min-height: 70px !important;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        margin: 0 5px;
+    }
+
+    .navbar-brand img {
+        height: 40px !important;
+    }
+
+    .social-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .social-icon img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .social-icons {
+        gap: 12px;
+    }
+
+    .logout {
+        font-size: 1rem !important;
+        padding: 0.5rem 1rem !important;
+    }
+}
+
+/* ===== ФУТЕР ===== */
+#footer {
+    margin-top: auto;
+}
+
+.footer-nav {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 8px 20px;
+    justify-content: center;
+}
+
+.footer-nav .nav-link {
+    padding: 5px 0;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.footer-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.footer-copyright {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+#footer .social-icons {
+    justify-content: flex-end;
+}
+
+#footer .social-icon {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#footer .social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Адаптивность футера */
+@media (max-width: 767.98px) {
+    #footer .row.align-items-center {
+        text-align: center;
+        gap: 20px;
+    }
+
+    #footer .col-md-4 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #footer .social-icons {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .footer-nav {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .footer-nav .nav-link {
+        min-width: auto;
+        display: inline-block;
+        padding: 6px 12px;
+    }
+}
+
+/* ===== АДМИНКА ===== */
+.chess-admin-theme {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: #f8f1e5;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 30px auto;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.chess-admin-title {
+    color: #5a3921;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+
+.chess-admin-subtitle {
+    color: #8b4513;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-style: italic;
+    
+}
+
+.chess-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8b4513, transparent);
+    margin: 20px 0;
+}
+
+.chess-button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.chess-admin-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 2px solid transparent;
+}
+
+.chess-admin-btn i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.chess-admin-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(91, 57, 33, 0.9));
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.chess-admin-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.chess-admin-btn:hover:before {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 1), rgba(91, 57, 33, 1));
+}
+
+.chess-tournament-btn:before {
+    background: linear-gradient(135deg, rgba(106, 81, 56, 0.9), rgba(70, 50, 30, 0.9));
+}
+
+.chess-planning-btn:before {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(91, 57, 33, 0.9));
+}
+
+.chess-board-decoration {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.chess-piece {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.king {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45"><g fill="none" fill-rule="evenodd" stroke="%23000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 11.63V6M20 8h5" stroke="%23000"/><path d="M22.5 25s4.5-7.5 3-10.5c0 0-1-2.5-3-2.5s-3 2.5-3 2.5c-1.5 3 3 10.5 3 10.5" fill="%23000" stroke-linecap="butt"/><path d="M11.5 37c5.5 3.5 15.5 3.5 21 0v-7s9-4.5 6-10.5c-4-6.5-13.5-3.5-16 4V27v-3.5c-3.5-7.5-13-10.5-16-4-3 6 5 10 5 10V37z" fill="%23000"/><path d="M11.5 30c5.5-3 15.5-3 21 0m-21 3.5c5.5-3 15.5-3 21 0m-21 3.5c5.5-3 15.5-3 21 0" stroke="%23fff"/></g></svg>');
+    right: 0;
+    bottom: 0;
+}
+
+.queen {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45"><g fill="%23000" fill-rule="evenodd" stroke="%23000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12a2 2 0 1 1-4 0 2 2 0 1 1 4 0zm16 0a2 2 0 1 1-4 0 2 2 0 1 1 4 0zm7 10a2 2 0 1 1-4 0 2 2 0 1 1 4 0zM6 26a2 2 0 1 1-4 0 2 2 0 1 1 4 0zm28-4a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" stroke="none"/><path d="M9 26c8.5-1.5 21-1.5 27 0l2-12-7 11V11l-5.5 13.5-3-15-3 15-5.5-14V25L7 14l2 12z" stroke-linecap="butt"/><path d="M9 26c0 2 1.5 2 2.5 4 1 1.5 1 1 .5 3.5-1.5 1-1.5 2.5-1.5 2.5-1.5 1.5.5 2.5.5 2.5 6.5 1 16.5 1 23 0 0 0 1.5-1 0-2.5 0 0 .5-1.5-1-2.5-.5-2.5-.5-2 .5-3.5 1-2 2.5-2 2.5-4-8.5-1.5-18.5-1.5-27 0z" stroke-linecap="butt"/><path d="M11.5 30c3.5-1 18.5-1 22 0M12 33.5c6-1 15-1 21 0" fill="none"/></g></svg>');
+    right: 80px;
+    bottom: 20px;
+}
+
+.rook {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45"><g fill="%23000" fill-rule="evenodd" stroke="%23000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 39h27v-3H9v3zM12 36v-4h21v4H12zM11 14V9h4v2h5V9h5v2h5V9h4v5" stroke-linecap="butt"/><path d="M34 14l-3 3H14l-3-3"/><path d="M31 17v12.5H14V17" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M31 29.5l1.5 2.5h-20l1.5-2.5"/><path d="M11 14h23" fill="none" stroke-linejoin="miter"/></g></svg>');
+    right: 40px;
+    bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .chess-admin-theme {
+        padding: 20px;
+        margin: 20px 15px;
+    }
+
+    .chess-button-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .chess-admin-btn {
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    .chess-admin-btn i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .chess-admin-title {
+        font-size: 2rem;
+    }
+}
+
+th > a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-chesses {
+    width: 100px;
+    background: linear-gradient(to bottom, #8b4513, #6b3100);
+    color: #f0e6d2 !important;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}

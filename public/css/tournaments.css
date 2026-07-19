@@ -1,0 +1,545 @@
+/* Основные стили */
+.tournaments-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.level-titleh {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+.level-titleh h1 {
+    color: #333;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Контейнер уровней */
+.levels-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 40px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+}
+
+
+.levels-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 20px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 160px;
+    border: 2px solid transparent;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    justify-content: center;
+}
+
+.levels-container a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Активное состояние */
+.levels-container a.active {
+    border-width: 2px;
+    font-weight: 600;
+}
+
+/* Все турниры (фиолетовый) */
+.levels-container a.all-levels {
+    color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+.levels-container a.all-levels.active {
+    background: #6f42c1;
+    color: white;
+}
+
+/* Муниципальный уровень (синий) */
+.levels-container a.municipal {
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.levels-container a.municipal.active {
+    background: #0d6efd;
+    color: white;
+}
+
+/* Региональный уровень (зеленый) */
+.levels-container a.regional {
+    color: #198754;
+    border-color: #198754;
+}
+
+.levels-container a.regional.active {
+    background: #198754;
+    color: white;
+}
+
+/* Межрегиональный уровень (оранжевый) */
+.levels-container a.interregional {
+    color: #fd7e14;
+    border-color: #fd7e14;
+}
+
+.levels-container a.interregional.active {
+    background: #fd7e14;
+    color: white;
+}
+
+/* Всероссийский уровень (красный) */
+.levels-container a.national {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.levels-container a.national.active {
+    background: #dc3545;
+    color: white;
+}
+
+/* Международный уровень (темно-синий) */
+.levels-container a.international {
+    color: #0b5ed7;
+    border-color: #0b5ed7;
+}
+
+.levels-container a.international.active {
+    background: #0b5ed7;
+    color: white;
+}
+
+/* Дефолтный цвет */
+.levels-container a.default {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.levels-container a.default.active {
+    background: #6c757d;
+    color: white;
+}
+
+/* Иконки */
+.level-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.levels-container a.active .level-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Текст в карточках */
+.levels-container h5 {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Заголовок выбранного уровня */
+.selected-level-title {
+    text-align: center;
+    margin: 30px 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.selected-level-title .level-name {
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+/* Цвета для текста выбранного уровня */
+.selected-level-title .level-name.municipal {
+    color: #0d6efd;
+}
+
+.selected-level-title .level-name.regional {
+    color: #198754;
+}
+
+.selected-level-title .level-name.interregional {
+    color: #fd7e14;
+}
+
+.selected-level-title .level-name.national {
+    color: #dc3545;
+}
+
+.selected-level-title .level-name.international {
+    color: #0b5ed7;
+}
+
+/* Секция турниров */
+.tournaments-section {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #dee2e6;
+}
+
+/* ===== ИСПРАВЛЕННЫЕ КАРТОЧКИ ТУРНИРОВ ===== */
+.tournament-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tournament-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;  /* Уменьшено с 20px */
+    border: 1px solid #dee2e6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tournament-card:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Границы по цветам */
+.tournament-card.municipal-border {
+    border-left: 4px solid #0d6efd;
+}
+
+.tournament-card.regional-border {
+    border-left: 4px solid #198754;
+}
+
+.tournament-card.interregional-border {
+    border-left: 4px solid #fd7e14;
+}
+
+.tournament-card.national-border {
+    border-left: 4px solid #dc3545;
+}
+
+.tournament-card.international-border {
+    border-left: 4px solid #0b5ed7;
+}
+
+.tournament-card.default-border {
+    border-left: 4px solid #6c757d;
+}
+
+/* Заголовок карточки */
+.tournament-name {
+    font-size: 16px;  /* Уменьшено с 18px */
+    font-weight: 600;
+    margin-bottom: 6px;  /* Уменьшено с 10px */
+    color: #333;
+}
+
+/* Цвета заголовков */
+.tournament-name.municipal {
+    color: #0d6efd;
+}
+
+.tournament-name.regional {
+    color: #198754;
+}
+
+.tournament-name.interregional {
+    color: #fd7e14;
+}
+
+.tournament-name.national {
+    color: #dc3545;
+}
+
+.tournament-name.international {
+    color: #0b5ed7;
+}
+
+/* Бейдж уровня */
+.tournament-level-badge {
+    display: inline-block;
+    padding: 3px 10px;  /* Уменьшено с 4px 12px */
+    border-radius: 20px;
+    font-size: 11px;  /* Уменьшено с 12px */
+    font-weight: 500;
+    margin-bottom: 8px;  /* Уменьшено с 15px */
+    color: white;
+}
+
+.tournament-level-badge.municipal {
+    background: #0d6efd;
+}
+
+.tournament-level-badge.regional {
+    background: #198754;
+}
+
+.tournament-level-badge.interregional {
+    background: #fd7e14;
+}
+
+.tournament-level-badge.national {
+    background: #dc3545;
+}
+
+.tournament-level-badge.international {
+    background: #0b5ed7;
+}
+
+.tournament-level-badge.default {
+    background: #6c757d;
+}
+
+/* Описание */
+.tournament-desc {
+    color: #666;
+    font-size: 13px;  /* Уменьшено с 14px */
+    line-height: 1.4;  /* Уменьшено с 1.5 */
+    margin-bottom: 10px;  /* Уменьшено с 15px */
+}
+
+/* Мета информация */
+.tournament-meta {
+    background: #f8f9fa;
+    padding: 10px 12px;  /* Уменьшено с 15px */
+    border-radius: 6px;
+    margin-bottom: 10px;  /* Уменьшено с 15px */
+}
+
+.meta-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;  /* Уменьшено с 5px 0 */
+    border-bottom: 1px solid #e9ecef;
+    font-size: 13px;  /* Добавлено */
+}
+
+.meta-item:last-child {
+    border-bottom: none;
+}
+
+.meta-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.meta-value {
+    color: #333;
+}
+
+/* Статусы */
+.status-активный,
+.status-active {
+    color: #198754;
+    font-weight: 600;
+}
+
+.status-завершен,
+.status-completed {
+    color: #6c757d;
+}
+
+.status-предстоящий,
+.status-upcoming {
+    color: #0dcaf0;
+}
+
+/* Кнопки действий */
+.tournament-actions {
+    text-align: center;
+    padding-top: 10px;  /* Уменьшено с 15px */
+    border-top: 1px solid #dee2e6;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto;  /* Прижимаем кнопки вниз */
+}
+
+.tournament-actions .btn {
+    padding: 6px 12px;  /* Уменьшено */
+    font-size: 13px;  /* Уменьшено */
+}
+
+/* Сообщение "нет турниров" */
+.no-tournaments {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.no-tournaments h5 {
+    margin: 0;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .levels-container {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .levels-container a {
+        width: 140px;
+        padding: 15px 10px;
+    }
+
+    .level-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .tournament-list {
+        grid-template-columns: 1fr;
+    }
+
+    .tournaments-section {
+        padding: 20px;
+    }
+
+    .tournament-header {
+        margin-bottom: 15px;
+    }
+}
+
+.level-titleh {
+    text-align: center;
+    padding: 40px 0 20px;
+    background-color: #f8f1e5;
+    border-bottom: 2px solid #8b4513;
+    margin-bottom: 30px;
+}
+
+.level-titleh h1 {
+    color: #5a3921;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.levels-container {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f1e5;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(139, 69, 19, 0.1);
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.levels-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #5a3921;
+    background: linear-gradient(135deg, #f0d9b5 0%, #e6c9a0 100%);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #8b4513;
+    position: relative;
+    overflow: hidden;
+}
+
+.levels-container a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #e6c9a0 0%, #f0d9b5 100%);
+}
+
+.levels-container a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: #8b4513;
+}
+
+.levels-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.7);
+    padding: 10px;
+}
+
+.levels-container a span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    color: #5a3921;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+}
+
+@media (max-width: 768px) {
+    .levels-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .level-titleh h1 {
+        font-size: 1.8rem;
+        padding: 0 15px;
+    }
+
+    .levels-container a {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .levels-container img {
+        height: 150px;
+    }
+
+    .levels-container a span {
+        font-size: 1.1rem;
+    }
+
+}
