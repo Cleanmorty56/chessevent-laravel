@@ -71,7 +71,7 @@
 
 ```bash
 # Клонировать репозиторий
-git clone https://github.com/ваш_логин/chess-event.git
+git clone https://github.com/ваш_логин/chessevent-laravel.git
 cd chessevent
 
 # Установить зависимости
